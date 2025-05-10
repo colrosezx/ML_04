@@ -1,0 +1,26 @@
+[2025-05-10T17:41:50.545+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: titanic_ml_pipeline.preprocess_data scheduled__2024-09-22T00:00:00+00:00 [queued]>
+[2025-05-10T17:41:50.550+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: titanic_ml_pipeline.preprocess_data scheduled__2024-09-22T00:00:00+00:00 [queued]>
+[2025-05-10T17:41:50.551+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2025-05-10T17:41:50.563+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): preprocess_data> on 2024-09-22 00:00:00+00:00
+[2025-05-10T17:41:50.571+0000] {standard_task_runner.py:60} INFO - Started process 3086 to run task
+[2025-05-10T17:41:50.573+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'titanic_ml_pipeline', 'preprocess_data', 'scheduled__2024-09-22T00:00:00+00:00', '--job-id', '203', '--raw', '--subdir', 'DAGS_FOLDER/***_pipeline.py', '--cfg-path', '/tmp/tmpupxzz6u4']
+[2025-05-10T17:41:50.575+0000] {standard_task_runner.py:88} INFO - Job 203: Subtask preprocess_data
+[2025-05-10T17:41:50.613+0000] {task_command.py:423} INFO - Running <TaskInstance: titanic_ml_pipeline.preprocess_data scheduled__2024-09-22T00:00:00+00:00 [running]> on host e821d368632d
+[2025-05-10T17:41:50.674+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='titanic_ml_pipeline' AIRFLOW_CTX_TASK_ID='preprocess_data' AIRFLOW_CTX_EXECUTION_DATE='2024-09-22T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-22T00:00:00+00:00'
+[2025-05-10T17:41:50.686+0000] {python.py:202} INFO - Done. Returned value was:      PassengerId  Survived  Pclass  Name  ...  Ticket     Fare  Cabin  Embarked
+1              2         1       1    49  ...     109  71.2833     72         0
+3              4         1       1    70  ...      31  53.1000     48         2
+6              7         0       1   112  ...      55  51.8625    117         2
+10            11         1       3   148  ...     120  16.7000    131         2
+11            12         1       1    27  ...      26  26.5500     43         2
+..           ...       ...     ...   ...  ...     ...      ...    ...       ...
+871          872         1       1    18  ...      33  52.5542     91         2
+872          873         0       1    35  ...      89   5.0000     29         2
+879          880         1       1   140  ...      38  83.1583     61         0
+887          888         1       1    75  ...      10  30.0000     25         2
+889          890         1       1    20  ...       8  30.0000     52         0
+
+[183 rows x 12 columns]
+[2025-05-10T17:41:50.727+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=titanic_ml_pipeline, task_id=preprocess_data, execution_date=20240922T000000, start_date=20250510T174150, end_date=20250510T174150
+[2025-05-10T17:41:50.746+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-05-10T17:41:50.761+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check
